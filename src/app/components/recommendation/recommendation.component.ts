@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-atomize-recommendation',
   templateUrl: './recommendation.component.html',
-  styleUrls: ['./recommendation.component.css']
+  styleUrls: ['./recommendation.component.scss']
 })
 export class RecommendationComponent implements OnInit {
 
