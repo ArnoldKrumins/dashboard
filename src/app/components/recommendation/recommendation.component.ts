@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecommendationComponent implements OnInit {
 
+  private isCollapsed = true;
   constructor() { }
 
   ngOnInit() {
   }
-
+  collapsed(event: any): void {
+    console.log(event);
+  }
+  expanded(event: any): void {
+    console.log(event);
+  }
 }

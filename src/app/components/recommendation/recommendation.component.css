@@ -1,6 +1,7 @@
+/*CHANGE TO USE SASS*/
+
 .rec-container{
-  height: 74px;
-  width:640px;
+  position: relative;
   border: 1px solid #D8D8D8;
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -68,4 +69,25 @@
   font-size: 12px;
   opacity: 0.2;
   color: #2E2E2E;
+}
+
+.rec-expander{
+  width: 100px;
+  height: 70px;
+  text-align: center;
+  position: absolute;
+  vertical-align: middle;
+  top: 0;
+  right: 0;
+}
+
+.rec-expander i {
+  padding-top: 24px;
+  opacity: 0.3;
+  font-size: 26px;
+}
+
+.rec-detail-container {
+  height:200px !important;
+  background-color: #FFFFFF;
 }

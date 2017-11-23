@@ -15,10 +15,19 @@
     </li>
     <li>
       <div class="rec-expander">
-
+        <i  (click)="isCollapsed = !isCollapsed" [hidden]="!isCollapsed" class="fa fa-angle-down" aria-hidden="true"></i>
+        <i  (click)="isCollapsed = !isCollapsed" [hidden]="isCollapsed" class="fa fa-angle-up" aria-hidden="true"></i>
       </div>
     </li>
   </ul>
+
+
+  <div class="rec-detail-container" (collapsed)="collapsed($event)"
+       (expanded)="expanded($event)"
+       [collapse]="isCollapsed">
+    <br>HERE IS SOME CONTENT
+  </div>
+
 </div>
 
 
