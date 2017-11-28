@@ -13,7 +13,7 @@ import { RecommendationComponent } from './components/recommendation/recommendat
 import { SettingsComponent } from './components/settings/settings.component';
 import { GraphComponent } from './common/components/graph/graph.component';
 import { RecommendationListComponent } from './components/recommendation-list/recommendation-list.component';
-import {HttpModule} from "@angular/http";
+import {HttpClientModule} from '@angular/common/http';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -53,7 +53,7 @@ export function highchartsFactory() {
     ),
     CollapseModule.forRoot(),
     ChartModule,
-    HttpModule
+    HttpClientModule
   ],
   providers: [
     {
