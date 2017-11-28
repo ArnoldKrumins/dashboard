@@ -5,10 +5,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import {FormsModule} from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { ChartModule } from 'angular2-highcharts';
+import { HighchartsStatic } from 'angular2-highcharts/dist/HighchartsService';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { RecommendationComponent } from './components/recommendation/recommendation.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import { GraphComponent } from './common/components/graph/graph.component';
+import { RecommendationListComponent } from './components/recommendation-list/recommendation-list.component';
+import {HttpModule} from "@angular/http";
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -18,6 +23,16 @@ const appRoutes: Routes = [
   { path: '**', component: PageNotFoundComponent }
 ];
 
+export declare let require: any;
+
+export function highchartsFactory() {
+  const hc = require('highcharts/highstock');
+  const dd = require('highcharts/modules/exporting');
+  dd(hc);
+
+  return hc;
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +40,9 @@ const appRoutes: Routes = [
     HomeComponent,
     PageNotFoundComponent,
     RecommendationComponent,
-    SettingsComponent
+    SettingsComponent,
+    GraphComponent,
+    RecommendationListComponent
   ],
   imports: [
     BrowserModule,
@@ -34,9 +51,15 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
-    CollapseModule.forRoot()
+    CollapseModule.forRoot(),
+    ChartModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HighchartsStatic,
+      useFactory: highchartsFactory
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
