@@ -1,0 +1,21 @@
+[{
+  "Date": "12/12/2017",
+  "RoomType": "ES",
+  "RoomName": "Superior Deluxe",
+  "NumberOfRooms": 21,
+  "OriginalPrice":2300,
+  "RecommendedPrice": 2400,
+  "PriceSaving": 100
+},
+{
+  "Date": "13/12/2017",
+  "RoomType": "ES",
+  "RoomName": "Superior Deluxe",
+  "NumberOfRooms": 10,
+  "OriginalPrice":2000,
+  "RecommendedPrice": 2400,
+  "PriceSaving": 400
+}]
+
+
+

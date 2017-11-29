@@ -1,21 +1,13 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-
-interface ItemsResponse {
-  results: string[];
-}
+import {Recommendation} from '../../models/recommendation';
 
 @Injectable()
 export class RecommendationsService {
-  results: string[];
-
-  constructor(private http: HttpClient) {
+  constructor(private httpClient: HttpClient) {
   }
 
-  getRecommendations() {
-    this.http.get<ItemsResponse>('./data/recommendations.json').subscribe(data => {
-      // data is now an instance of type ItemsResponse, so you can do this:
-      this.results = data.results;
-    });
+  getAll() {
+    return this.httpClient.get<Array<Recommendation>>('../../assets/data/recommendations.json');
   }
 }

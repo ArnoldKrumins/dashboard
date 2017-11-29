@@ -5,6 +5,8 @@ export class User {
   password: string;
   username: string;
   company: string;
+  currency:string;
+  timezone:string;
   hotels: Array<Hotel>;
 
 }

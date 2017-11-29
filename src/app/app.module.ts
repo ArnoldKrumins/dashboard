@@ -14,6 +14,8 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { GraphComponent } from './common/components/graph/graph.component';
 import { RecommendationListComponent } from './components/recommendation-list/recommendation-list.component';
 import {HttpClientModule} from '@angular/common/http';
+import { MostUrgentComponent } from './components/most-urgent/most-urgent.component';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -42,7 +44,8 @@ export function highchartsFactory() {
     RecommendationComponent,
     SettingsComponent,
     GraphComponent,
-    RecommendationListComponent
+    RecommendationListComponent,
+    MostUrgentComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,7 @@ export function highchartsFactory() {
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
+    BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),
     ChartModule,
     HttpClientModule

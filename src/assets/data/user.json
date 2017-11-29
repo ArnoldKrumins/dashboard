@@ -1,0 +1,32 @@
+{
+  "email": "arnold.krumins@gmail.com",
+  "password": "password",
+  "username": "Arnold K",
+  "company": "Hilton Hotel Group",
+  "currency": "SEK",
+  "timezome": "Stockholm",
+  "hotels": [
+    {
+      "id": "H1",
+      "name": "Hilton Gothenburg",
+      "roomtypes": [
+        {
+          "id": "1",
+          "name": "Economy",
+          "roomquantity": 100
+        },
+        {
+          "id": "2",
+          "name": "Deluxe",
+          "roomquantity": 50
+        },
+        {
+          "id": "3",
+          "name": "Penthouse",
+          "roomquantity": 20
+        }
+      ]
+    }
+  ]
+}
+

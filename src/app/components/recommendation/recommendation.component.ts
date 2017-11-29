@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Recommendation} from '../../models/recommendation';
 
 @Component({
   selector: 'app-atomize-recommendation',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecommendationComponent implements OnInit {
 
+  @Input() recommendation: Recommendation;
   private isCollapsed = true;
   constructor() { }
 
