@@ -16,6 +16,7 @@ import { RecommendationListComponent } from './components/recommendation-list/re
 import {HttpClientModule} from '@angular/common/http';
 import { MostUrgentComponent } from './components/most-urgent/most-urgent.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -57,7 +58,8 @@ export function highchartsFactory() {
     BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),
     ChartModule,
-    HttpClientModule
+    HttpClientModule,
+    MultiselectDropdownModule
   ],
   providers: [
     {

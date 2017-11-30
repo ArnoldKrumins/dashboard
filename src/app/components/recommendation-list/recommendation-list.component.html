@@ -14,6 +14,7 @@
         <div class="room-types">
 
           <select name="selectRoomType" [(ngModel)]="roomlist">
+            <option value="0">All</option>
             <option *ngFor="let room of selectedHotel?.roomtypes" [ngValue]="room.id">{{ room.name }}</option>
           </select>
 
