@@ -1,7 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {User} from '../../models/user';
 import {UserService} from '../../common/services/user.service';
-import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +9,14 @@ import {Observable} from 'rxjs/Observable';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  private user: Observable<User>;
-  constructor(private userService: UserService) { }
+  public user: User = new User();
 
-  ngOnInit() {
-    this.user = new Observable<User>();
-    this.user = this.userService.user;
+  constructor(private userService: UserService) {
+    this.userService.getUser().subscribe(res => {
+      this.user = res;
+    });
   }
 
+  ngOnInit() {
+  }
 }

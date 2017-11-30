@@ -3,17 +3,20 @@
 
     <ul class="hotel-roomtypes">
       <li>
-        <div class="col-sm-12 col-md-3 col-lg-3">
-          <select class="form-control">
-            <option>1</option>
+        <div>
+          <select name="selectHotel" [(ngModel)]="selectedHotel">
+            <option *ngFor="let hotel of Hotels" [ngValue]="hotel">{{ hotel.name }}</option>
           </select>
+
         </div>
       </li>
       <li>
-        <div class="col-sm-12 col-md-3 col-lg-3">
-          <select class="form-control">
-            <option>1</option>
+        <div class="room-types">
+
+          <select name="selectRoomType" [(ngModel)]="roomlist">
+            <option *ngFor="let room of selectedHotel?.roomtypes" [ngValue]="room.id">{{ room.name }}</option>
           </select>
+
         </div>
       </li>
     </ul>

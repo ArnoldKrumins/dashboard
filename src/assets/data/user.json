@@ -13,20 +13,45 @@
         {
           "id": "1",
           "name": "Economy",
-          "roomquantity": 100
+          "quantity": 100
         },
         {
           "id": "2",
           "name": "Deluxe",
-          "roomquantity": 50
+          "quantity": 50
         },
         {
           "id": "3",
           "name": "Penthouse",
-          "roomquantity": 20
+          "quantity": 20
+        }
+      ]
+    },
+    {
+      "id": "H1",
+      "name": "Hilton Stockholm",
+      "roomtypes": [
+        {
+          "id": "1",
+          "name": "Economy",
+          "quantity": 200
+        },
+        {
+          "id": "2",
+          "name": "Deluxe",
+          "quantity": 70
+        },
+        {
+          "id": "3",
+          "name": "Super Deluxe Water View",
+          "quantity": 5
+        },
+        {
+          "id": "4",
+          "name": "Penthouse",
+          "quantity": 10
         }
       ]
     }
   ]
 }
-

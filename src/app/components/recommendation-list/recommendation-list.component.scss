@@ -1,4 +1,5 @@
 .list-container{
+  position: relative;
   padding: 10px;
   border: 1px solid #576773;
   border-radius: 8px 8px 0 0;
@@ -16,8 +17,26 @@
   ul.hotel-roomtypes{
     width:100%;
     li{
-      width:100%;
+      width:300px;
       display: inline-block;
+      div{
+        margin-bottom: 10px;
+
+        select{
+          min-width: 220px;
+        }
+      }
+
+      div.room-types{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        select{
+          background-color: #687681;
+          color: #FFFFFF;
+        }
+
+      }
     }
 
   }
