@@ -4,20 +4,15 @@
     <ul class="hotel-roomtypes">
       <li>
         <div>
-          <select name="selectHotel" [(ngModel)]="selectedHotel">
-            <option *ngFor="let hotel of Hotels" [ngValue]="hotel">{{ hotel.name }}</option>
+          <select #selectHotel (change)="onHotelChange(selectHotel.value)">
+            <option *ngFor="let hotel of Hotels" [value]="hotel.id">{{ hotel.name }}</option>
           </select>
 
         </div>
       </li>
       <li>
         <div class="room-types">
-
-          <select name="selectRoomType" [(ngModel)]="roomlist">
-            <option value="0">All</option>
-            <option *ngFor="let room of selectedHotel?.roomtypes" [ngValue]="room.id">{{ room.name }}</option>
-          </select>
-
+          <ss-multiselect-dropdown  [texts]="texts" [options]="myOptions" [(ngModel)]="roomType" (ngModelChange)="onChange($event)"></ss-multiselect-dropdown>
         </div>
       </li>
     </ul>

@@ -7,7 +7,7 @@
   "timezome": "Stockholm",
   "hotels": [
     {
-      "id": "H1",
+      "id": "GH1",
       "name": "Hilton Gothenburg",
       "roomtypes": [
         {
@@ -28,7 +28,7 @@
       ]
     },
     {
-      "id": "H1",
+      "id": "SH1",
       "name": "Hilton Stockholm",
       "roomtypes": [
         {

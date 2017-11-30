@@ -3,6 +3,8 @@ import {RecommendationsService} from './recommendations.service';
 import {Recommendation} from '../../models/recommendation';
 import {Observable} from 'rxjs/Observable';
 import {Hotel} from '../../models/hotel';
+import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
+import {Roomtype} from '../../models/roomtype';
 
 @Component({
   selector: 'app-atomize-recommendation-list',
@@ -14,8 +16,16 @@ export class RecommendationListComponent implements OnInit {
 
   @Input() Hotels: Array<Hotel> = new Array<Hotel>();
   private selectedHotel: any;
-  public recommendations: Observable<Recommendation[]>;
 
+  private texts: IMultiSelectTexts = {
+    defaultTitle: 'Select room types'
+  };
+  private settings: IMultiSelectSettings = {
+    selectionLimit: 3,
+  };
+  private roomType: Roomtype;
+  private myOptions: IMultiSelectOption[];
+  public recommendations: Observable<Recommendation[]>;
   constructor(private service: RecommendationsService) {
     this.recommendations = new Observable<Recommendation[]>();
     this.recommendations = this.service.getAll();
@@ -24,4 +34,11 @@ export class RecommendationListComponent implements OnInit {
   ngOnInit() {
   }
 
+  onHotelChange(id) {
+    this.myOptions = this.Hotels.filter(x => x.id === id ).map(y => y.roomtypes)[0];
+  }
+
+  onChange() {
+    console.log(this.roomType);
+  }
 }
