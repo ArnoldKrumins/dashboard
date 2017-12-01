@@ -4,7 +4,7 @@
     <ul class="hotel-roomtypes">
       <li>
         <div>
-          <select #selectHotel (change)="onHotelChange(selectHotel.value)">
+          <select class="hotel" #selectHotel (change)="onHotelChange(selectHotel.value)">
             <option *ngFor="let hotel of Hotels" [value]="hotel.id">{{ hotel.name }}</option>
           </select>
 
@@ -12,20 +12,21 @@
       </li>
       <li>
         <div class="room-types">
-          <ss-multiselect-dropdown  [texts]="texts" [options]="myOptions" [(ngModel)]="roomType" (ngModelChange)="onChange($event)"></ss-multiselect-dropdown>
+          <ss-multiselect-dropdown  [texts]="texts" [options]="myOptions" [(ngModel)]="roomTypes" (ngModelChange)="onChange($event)"></ss-multiselect-dropdown>
         </div>
       </li>
     </ul>
 
 
+    <div class="recommendation-grid">
+      <label class="checkbox-inline">
+        <input type="checkbox" id="inlineCheckbox1" value="option1"> Select All
+      </label>
+      <ul>
+        <li *ngFor="let rec of recommendations | async">
+          <app-atomize-recommendation [recommendation]="rec"></app-atomize-recommendation>
+        </li>
+      </ul>
+    </div>
 
-
-
-
-
-  <ul>
-    <li *ngFor="let rec of recommendations | async">
-      <app-atomize-recommendation [recommendation]="rec"></app-atomize-recommendation>
-    </li>
-  </ul>
 </div>

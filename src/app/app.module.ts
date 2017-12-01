@@ -17,6 +17,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { MostUrgentComponent } from './components/most-urgent/most-urgent.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
+import { SpinnerDirective } from './directives/spinner.directive';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -46,7 +47,8 @@ export function highchartsFactory() {
     SettingsComponent,
     GraphComponent,
     RecommendationListComponent,
-    MostUrgentComponent
+    MostUrgentComponent,
+    SpinnerDirective
   ],
   imports: [
     BrowserModule,

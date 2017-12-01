@@ -2,8 +2,11 @@
   <ul>
     <li>
       <div class="rec-headline">
-        <p class="rec-headline-price">1245 kr</p>
-        <p class="rec-headline-room-number">12<i class="fa fa-bed rec-bed-icon" aria-hidden="true"></i></p>
+        <ul>
+          <li class="rec-headline-price">{{ recommendation.Date |date:'E MMM yy'  }}</li>
+          <li class="rec-headline-price">{{ recommendation.RecommendedPrice }}</li>
+          <li class="rec-headline-room-number"><div>{{ recommendation.NumberOfRooms }}<i class="fa fa-bed rec-bed-icon" aria-hidden="true"></i></div></li>
+        </ul>
       </div>
     </li>
     <li>

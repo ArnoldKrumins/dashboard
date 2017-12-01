@@ -3,8 +3,9 @@ import {RecommendationsService} from './recommendations.service';
 import {Recommendation} from '../../models/recommendation';
 import {Observable} from 'rxjs/Observable';
 import {Hotel} from '../../models/hotel';
-import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
+import {IMultiSelectOption, IMultiSelectTexts} from 'angular-2-dropdown-multiselect';
 import {Roomtype} from '../../models/roomtype';
+import {SpinnerDirective} from '../../directives/spinner.directive';
 
 @Component({
   selector: 'app-atomize-recommendation-list',
@@ -18,12 +19,9 @@ export class RecommendationListComponent implements OnInit {
   private selectedHotel: any;
 
   private texts: IMultiSelectTexts = {
-    defaultTitle: 'Select room types'
+     defaultTitle: 'Select room types'
   };
-  private settings: IMultiSelectSettings = {
-    selectionLimit: 3,
-  };
-  private roomType: Roomtype;
+  private roomTypes: Array<number>;
   private myOptions: IMultiSelectOption[];
   public recommendations: Observable<Recommendation[]>;
   constructor(private service: RecommendationsService) {
@@ -39,6 +37,6 @@ export class RecommendationListComponent implements OnInit {
   }
 
   onChange() {
-    console.log(this.roomType);
+    console.log(this.roomTypes);
   }
 }
