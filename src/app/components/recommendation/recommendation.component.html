@@ -3,9 +3,15 @@
     <li>
       <div class="rec-headline">
         <ul>
-          <li class="rec-headline-date"><div>{{ recommendation.Date |date:'E MMM yy'  }}</div></li>
-          <li class="rec-headline-price"><div>{{ recommendation.RecommendedPrice }}</div></li>
-          <li class="rec-headline-room-number"><div>{{ recommendation.NumberOfRooms }}<i class="fa fa-bed rec-bed-icon" aria-hidden="true"></i></div></li>
+          <li class="rec-headline-date">
+            <div>{{ recommendation.Date |date:'E MMM yy' }}</div>
+          </li>
+          <li class="rec-headline-price">
+            <div>{{ recommendation.PriceSaving }}</div>
+          </li>
+          <li class="rec-headline-room-number">
+            <div>{{ recommendation.NumberOfRooms }}<i class="fa fa-bed rec-bed-icon" aria-hidden="true"></i></div>
+          </li>
         </ul>
       </div>
     </li>
@@ -15,16 +21,20 @@
     <li>
       <div class="rec-detail">
         <ul>
-          <li><p><span>1245 kr</span><i class="fa fa-long-arrow-right" aria-hidden="true"></i><span>2345 kr</span><i class="fa fa-circle" aria-hidden="true"></i></p></li>
-          <li><p><span>1245 kr</span><i class="fa fa-long-arrow-right" aria-hidden="true"></i><span>2345 kr</span><i class="fa fa-circle" aria-hidden="true"></i></p></li>
+          <li><p><span>{{ recommendation.OriginalPrice }}</span><i class="fa fa-long-arrow-right"
+                                                                   aria-hidden="true"></i><span>{{ recommendation.RecommendedPrice }}</span>
+          </p></li>
+          <li><p><span>{{ recommendation.PredictedOccupancyFrom }} %</span><i class="fa fa-long-arrow-right"
+                                                                              aria-hidden="true"></i><strong><span>{{ recommendation.PredictedOccupancyTo }} %</span></strong>
+          </p></li>
         </ul>
       </div>
 
     </li>
     <li>
       <div class="rec-expander">
-        <i  (click)="isCollapsed = !isCollapsed" [hidden]="!isCollapsed" class="fa fa-angle-down" aria-hidden="true"></i>
-        <i  (click)="isCollapsed = !isCollapsed" [hidden]="isCollapsed" class="fa fa-angle-up" aria-hidden="true"></i>
+        <i (click)="isCollapsed = !isCollapsed" [hidden]="!isCollapsed" class="fa fa-angle-down" aria-hidden="true"></i>
+        <i (click)="isCollapsed = !isCollapsed" [hidden]="isCollapsed" class="fa fa-angle-up" aria-hidden="true"></i>
       </div>
     </li>
   </ul>
@@ -34,8 +44,47 @@
        (expanded)="expanded($event)"
        [collapse]="isCollapsed">
 
-    <div>
-      <p>Recommended Price Adjustment:</p>
+    <div class="rec-detail-body col-lg-12 col-md-12">
+
+      <div class="detail-container col-lg-6 col-md-6">
+        <p class="heading">Availability:</p>
+        <p class="info" >{{ recommendation.NumberOfRooms }} Rooms</p>
+        <p class="heading">Recommended price adjustments:</p>
+        <p class="info"><span>{{ recommendation.OriginalPrice }}</span><i class="fa fa-long-arrow-right"
+                                                             aria-hidden="true"></i><span>{{ recommendation.RecommendedPrice }}</span>
+        </p>
+
+        <p class="heading">Predicted Occupancy:</p>
+        <p class="info"><span>{{ recommendation.PredictedOccupancyFrom }}%</span><i class="fa fa-long-arrow-right"
+                                                                        aria-hidden="true"></i><strong><span>{{ recommendation.PredictedOccupancyTo }} %</span></strong>
+        </p>
+
+        <p class="heading">RevPAR:</p>
+        <p class="info"><span>{{ recommendation.RevParFrom }}</span><i class="fa fa-long-arrow-right"
+                                                                        aria-hidden="true"></i><strong><span>{{ recommendation.RevParTo }}</span></strong>
+        </p>
+
+
+        <p class="heading">Predicted revenue until adjusted date:</p>
+        <p class="info"><span>{{ recommendation.RevUntilAdjustedDateFrom }}</span><i class="fa fa-long-arrow-right"
+                                                                        aria-hidden="true"></i><strong><span>{{ recommendation.RevUntilAdjustedDateTo }}</span></strong>
+        </p>
+      </div>
+
+      <div class="competitor-container col-lg-6 col-md-6">
+
+        <p class="heading">Competitor Pricing:</p>
+        <table>
+          <tr *ngFor="let competitor of recommendation.Competitors" >
+            <td>{{ competitor.name }}</td><td>{{ competitor.price }}</td>
+          </tr>
+
+        </table>
+      </div>
+
+    </div>
+
+    <div class="graph-container col-lg-12 col-md-12">
       <app-atomize-graph></app-atomize-graph>
     </div>
 

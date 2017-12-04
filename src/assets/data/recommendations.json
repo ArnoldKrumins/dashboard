@@ -5,7 +5,25 @@
   "NumberOfRooms": 21,
   "OriginalPrice":2300,
   "RecommendedPrice": 2400,
-  "PriceSaving": 100
+  "PriceSaving": 100,
+  "PredictedOccupancyFrom":45,
+  "PredictedOccupancyTo":55,
+  "RevParFrom": 1234,
+  "RevParTo":1456,
+  "RevUntilAdjustedDateFrom":3456,
+  "RevUntilAdjustedDateTo":3567,
+  "Competitors":[
+    {"name":"Hotel One","price": 2000},
+    {"name":"Hotel Two","price": 2200},
+    {"name":"Hotel Three","price": 2040},
+    {"name":"Hotel Four","price": 2060},
+    {"name":"Hotel Five","price": 2080},
+    {"name":"Hotel Six","price": 3060},
+    {"name":"Hotel Seven","price": 3240},
+    {"name":"Hotel Eight","price": 3360},
+    {"name":"Hotel Nine","price": 3690},
+    {"name":"Your recommended price","price": 4390}
+  ]
 },
 {
   "Date": "02/12/2017",
@@ -14,7 +32,25 @@
   "NumberOfRooms": 10,
   "OriginalPrice":2000,
   "RecommendedPrice": 2400,
-  "PriceSaving": 400
+  "PriceSaving": 400,
+  "PredictedOccupancyFrom":40,
+  "PredictedOccupancyTo":58,
+  "RevParFrom": 1234,
+  "RevParTo":1456,
+  "RevUntilAdjustedDateFrom":3456,
+  "RevUntilAdjustedDateTo":3567,
+  "Competitors":[
+    {"name":"Hotel One","price": 2000},
+    {"name":"Hotel Two","price": 2200},
+    {"name":"Hotel Three","price": 2040},
+    {"name":"Hotel Four","price": 2060},
+    {"name":"Hotel Five","price": 2080},
+    {"name":"Hotel Six","price": 3060},
+    {"name":"Hotel Seven","price": 3240},
+    {"name":"Hotel Eight","price": 3360},
+    {"name":"Hotel Nine","price": 3690},
+    {"name":"Your recommended price","price": 4390}
+  ]
 }]
 
 

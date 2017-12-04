@@ -1,3 +1,5 @@
+import {Competitor} from './competitor';
+
 export class Recommendation {
   Date: string
   RoomType: string;
@@ -6,4 +8,11 @@ export class Recommendation {
   OriginalPrice: number;
   RecommendedPrice: number;
   PriceSaving: number;
+  PredictedOccupancyFrom: number;
+  PredictedOccupancyTo: number;
+  RevParFrom: number;
+  RevParTo: number;
+  RevUntilAdjustedDateFrom: number;
+  RevUntilAdjustedDateTo: number;
+  Competitors: Array<Competitor>;
 }
