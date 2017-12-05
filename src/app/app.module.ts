@@ -24,7 +24,7 @@ import { RecommendationViewComponent } from './components/recommendation-view/re
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'settings', component: SettingsComponent },
+  { path: 'recommendation-view', component: RecommendationViewComponent },
   { path: '',   redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];

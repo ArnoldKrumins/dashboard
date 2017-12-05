@@ -22,10 +22,10 @@
       <div class="rec-detail">
         <ul>
           <li><p><span>{{ recommendation.OriginalPrice | currency: currency  }}</span><i class="fa fa-long-arrow-right"
-                                                                   aria-hidden="true"></i><span>{{ recommendation.RecommendedPrice | currency: currency  }}</span>
+                                                                   aria-hidden="true"></i><span class="reco-bold">{{ recommendation.RecommendedPrice | currency: currency  }}</span>
           </p></li>
           <li><p><span>{{ recommendation.PredictedOccupancyFrom }} %</span><i class="fa fa-long-arrow-right"
-                                                                              aria-hidden="true"></i><strong><span>{{ recommendation.PredictedOccupancyTo }} %</span></strong>
+                                                                              aria-hidden="true"></i><span class="reco-bold">{{ recommendation.PredictedOccupancyTo }} %</span>
           </p></li>
         </ul>
       </div>

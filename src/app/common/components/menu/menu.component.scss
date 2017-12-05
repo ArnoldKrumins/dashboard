@@ -6,12 +6,18 @@
   height: 40px;
   background-color: #16262E;
 
-  img{
-    margin: 7px 0 0 20px;
+  ul {
+    text-decoration: none;
+    li {
+      display: inline-block;
+    }
   }
 
   nav {
-    margin: 10px 0 0 88px;
+    margin: 10px 0 0 20px;
+    a{
+        padding-right: 20px;
+    }
   }
 
   div.user-info {
@@ -20,12 +26,7 @@
     top: 6px;
     right: 0px;
 
-    ul {
-      text-decoration: none;
-      li {
-        display: inline-block;
-      }
-    }
+
     div.details {
 
       margin-right: 10px;
