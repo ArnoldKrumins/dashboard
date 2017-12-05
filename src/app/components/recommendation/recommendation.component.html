@@ -7,7 +7,7 @@
             <div>{{ recommendation.Date |date:'E MMM yy' }}</div>
           </li>
           <li class="rec-headline-price">
-            <div>{{ recommendation.PriceSaving }}</div>
+            <div>{{ recommendation.PriceSaving | currency: currency }}</div>
           </li>
           <li class="rec-headline-room-number">
             <div>{{ recommendation.NumberOfRooms }}<i class="fa fa-bed rec-bed-icon" aria-hidden="true"></i></div>
@@ -21,8 +21,8 @@
     <li>
       <div class="rec-detail">
         <ul>
-          <li><p><span>{{ recommendation.OriginalPrice }}</span><i class="fa fa-long-arrow-right"
-                                                                   aria-hidden="true"></i><span>{{ recommendation.RecommendedPrice }}</span>
+          <li><p><span>{{ recommendation.OriginalPrice | currency: currency  }}</span><i class="fa fa-long-arrow-right"
+                                                                   aria-hidden="true"></i><span>{{ recommendation.RecommendedPrice | currency: currency  }}</span>
           </p></li>
           <li><p><span>{{ recommendation.PredictedOccupancyFrom }} %</span><i class="fa fa-long-arrow-right"
                                                                               aria-hidden="true"></i><strong><span>{{ recommendation.PredictedOccupancyTo }} %</span></strong>
@@ -50,24 +50,24 @@
         <p class="heading">Availability:</p>
         <p class="info" >{{ recommendation.NumberOfRooms }} Rooms</p>
         <p class="heading">Recommended price adjustments:</p>
-        <p class="info"><span>{{ recommendation.OriginalPrice }}</span><i class="fa fa-long-arrow-right"
-                                                             aria-hidden="true"></i><span>{{ recommendation.RecommendedPrice }}</span>
+        <p class="info"><span>{{ recommendation.OriginalPrice | currency: currency  }}</span><i class="fa fa-long-arrow-right"
+                                                             aria-hidden="true"></i><span>{{ recommendation.RecommendedPrice | currency: currency  }}</span>
         </p>
 
         <p class="heading">Predicted Occupancy:</p>
         <p class="info"><span>{{ recommendation.PredictedOccupancyFrom }}%</span><i class="fa fa-long-arrow-right"
-                                                                        aria-hidden="true"></i><strong><span>{{ recommendation.PredictedOccupancyTo }} %</span></strong>
+                                                                        aria-hidden="true"></i><strong><span>{{ recommendation.PredictedOccupancyTo }}%</span></strong>
         </p>
 
         <p class="heading">RevPAR:</p>
-        <p class="info"><span>{{ recommendation.RevParFrom }}</span><i class="fa fa-long-arrow-right"
-                                                                        aria-hidden="true"></i><strong><span>{{ recommendation.RevParTo }}</span></strong>
+        <p class="info"><span>{{ recommendation.RevParFrom  | currency: currency }}</span><i class="fa fa-long-arrow-right"
+                                                                        aria-hidden="true"></i><strong><span>{{ recommendation.RevParTo | currency: currency  }}</span></strong>
         </p>
 
 
         <p class="heading">Predicted revenue until adjusted date:</p>
-        <p class="info"><span>{{ recommendation.RevUntilAdjustedDateFrom }}</span><i class="fa fa-long-arrow-right"
-                                                                        aria-hidden="true"></i><strong><span>{{ recommendation.RevUntilAdjustedDateTo }}</span></strong>
+        <p class="info"><span>{{ recommendation.RevUntilAdjustedDateFrom | currency: currency  }}</span><i class="fa fa-long-arrow-right"
+                                                                        aria-hidden="true"></i><strong><span>{{ recommendation.RevUntilAdjustedDateTo | currency: currency  }}</span></strong>
         </p>
       </div>
 
@@ -76,16 +76,15 @@
         <p class="heading">Competitor Pricing:</p>
         <table>
           <tr *ngFor="let competitor of recommendation.Competitors" >
-            <td>{{ competitor.name }}</td><td>{{ competitor.price }}</td>
+            <td>{{ competitor.name }}</td><td>{{ competitor.price | currency: currency }}</td>
           </tr>
-
         </table>
       </div>
 
     </div>
 
     <div class="graph-container col-lg-12 col-md-12">
-      <app-atomize-graph></app-atomize-graph>
+      <app-atomize-graph [graphdata]="recommendation.Graphdata"></app-atomize-graph>
     </div>
 
 

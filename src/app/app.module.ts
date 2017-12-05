@@ -18,6 +18,8 @@ import { MostUrgentComponent } from './components/most-urgent/most-urgent.compon
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 import { SpinnerDirective } from './directives/spinner.directive';
+import { MenuComponent } from './common/components/menu/menu.component';
+import { RecommendationViewComponent } from './components/recommendation-view/recommendation-view.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -48,7 +50,9 @@ export function highchartsFactory() {
     GraphComponent,
     RecommendationListComponent,
     MostUrgentComponent,
-    SpinnerDirective
+    SpinnerDirective,
+    MenuComponent,
+    RecommendationViewComponent
   ],
   imports: [
     BrowserModule,

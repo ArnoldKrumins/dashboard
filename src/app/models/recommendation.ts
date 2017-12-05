@@ -15,4 +15,5 @@ export class Recommendation {
   RevUntilAdjustedDateFrom: number;
   RevUntilAdjustedDateTo: number;
   Competitors: Array<Competitor>;
+  Graphdata: Object;
 }

@@ -9,6 +9,7 @@ import {Recommendation} from '../../models/recommendation';
 export class RecommendationComponent implements OnInit {
 
   @Input() recommendation: Recommendation;
+  @Input() currency: string;
   private isCollapsed = true;
   constructor() { }
 

@@ -24,7 +24,7 @@
       </label>
       <ul>
         <li *ngFor="let rec of recommendations | async">
-          <app-atomize-recommendation [recommendation]="rec"></app-atomize-recommendation>
+          <app-atomize-recommendation [currency]="Currency" [recommendation]="rec"></app-atomize-recommendation>
         </li>
       </ul>
     </div>

@@ -1,57 +1,807 @@
-[{
-  "Date": "01/12/2017",
-  "RoomType": "ES",
-  "RoomName": "Superior Deluxe",
-  "NumberOfRooms": 21,
-  "OriginalPrice":2300,
-  "RecommendedPrice": 2400,
-  "PriceSaving": 100,
-  "PredictedOccupancyFrom":45,
-  "PredictedOccupancyTo":55,
-  "RevParFrom": 1234,
-  "RevParTo":1456,
-  "RevUntilAdjustedDateFrom":3456,
-  "RevUntilAdjustedDateTo":3567,
-  "Competitors":[
-    {"name":"Hotel One","price": 2000},
-    {"name":"Hotel Two","price": 2200},
-    {"name":"Hotel Three","price": 2040},
-    {"name":"Hotel Four","price": 2060},
-    {"name":"Hotel Five","price": 2080},
-    {"name":"Hotel Six","price": 3060},
-    {"name":"Hotel Seven","price": 3240},
-    {"name":"Hotel Eight","price": 3360},
-    {"name":"Hotel Nine","price": 3690},
-    {"name":"Your recommended price","price": 4390}
-  ]
-},
-{
-  "Date": "02/12/2017",
-  "RoomType": "ES",
-  "RoomName": "Superior Deluxe",
-  "NumberOfRooms": 10,
-  "OriginalPrice":2000,
-  "RecommendedPrice": 2400,
-  "PriceSaving": 400,
-  "PredictedOccupancyFrom":40,
-  "PredictedOccupancyTo":58,
-  "RevParFrom": 1234,
-  "RevParTo":1456,
-  "RevUntilAdjustedDateFrom":3456,
-  "RevUntilAdjustedDateTo":3567,
-  "Competitors":[
-    {"name":"Hotel One","price": 2000},
-    {"name":"Hotel Two","price": 2200},
-    {"name":"Hotel Three","price": 2040},
-    {"name":"Hotel Four","price": 2060},
-    {"name":"Hotel Five","price": 2080},
-    {"name":"Hotel Six","price": 3060},
-    {"name":"Hotel Seven","price": 3240},
-    {"name":"Hotel Eight","price": 3360},
-    {"name":"Hotel Nine","price": 3690},
-    {"name":"Your recommended price","price": 4390}
-  ]
-}]
+[
+  {
+    "Date": "01/12/2017",
+    "RoomType": "ES",
+    "RoomName": "Superior Deluxe",
+    "NumberOfRooms": 21,
+    "OriginalPrice": 2300,
+    "RecommendedPrice": 2400,
+    "PriceSaving": 100,
+    "PredictedOccupancyFrom": 45,
+    "PredictedOccupancyTo": 55,
+    "RevParFrom": 1234,
+    "RevParTo": 1456,
+    "RevUntilAdjustedDateFrom": 3456,
+    "RevUntilAdjustedDateTo": 3567,
+    "Competitors": [
+      {
+        "name": "Hotel One",
+        "price": 2000
+      },
+      {
+        "name": "Hotel Two",
+        "price": 2200
+      },
+      {
+        "name": "Hotel Three",
+        "price": 2040
+      },
+      {
+        "name": "Hotel Four",
+        "price": 2060
+      },
+      {
+        "name": "Hotel Five",
+        "price": 2080
+      },
+      {
+        "name": "Hotel Six",
+        "price": 3060
+      },
+      {
+        "name": "Hotel Seven",
+        "price": 3240
+      },
+      {
+        "name": "Hotel Eight",
+        "price": 3360
+      },
+      {
+        "name": "Hotel Nine",
+        "price": 3690
+      },
+      {
+        "name": "Your recommended price",
+        "price": 4390
+      }
+    ],
+    "Graphdata": {
+      "title": {
+        "text": null
+      },
+      "credits": {
+        "enabled": false
+      },
+      "exporting": {
+        "enabled": false
+      },
+      "subtitle": {
+        "text": null
+      },
+      "xAxis": {
+        "gridLineWidth": 0,
+        "lineWidth": 2,
+        "offset": 20,
+        "tickWidth": 2,
+        "tickAmount": 3,
+        "lineColor": "#556673",
+        "tickColor": "#556673",
+        "labels": {
+          "format": "{value:,.0f} EUR",
+          "style": {
+            "fontSize": "12px",
+            "color": null,
+            "textOutline": null,
+            "fontWeight": null
+          }
+        },
+        "title": {
+          "text": null
+        },
+        "min": 70,
+        "max": 160,
+        "opposite": null
+      },
+      "yAxis": [
+        {
+          "gridLineWidth": 0,
+          "lineWidth": 2,
+          "offset": 20,
+          "tickWidth": 2,
+          "tickAmount": 2,
+          "lineColor": "#3C3C3C",
+          "tickColor": "#3C3C3C",
+          "labels": {
+            "format": "{value:,.0f} EUR",
+            "style": {
+              "fontSize": "12px",
+              "color": null,
+              "textOutline": null,
+              "fontWeight": null
+            }
+          },
+          "title": {
+            "text": null
+          },
+          "min": -400,
+          "max": 500,
+          "opposite": null
+        },
+        {
+          "gridLineWidth": 0,
+          "lineWidth": 2,
+          "offset": 20,
+          "tickWidth": 2,
+          "tickAmount": 2,
+          "lineColor": "#A2A2A2",
+          "tickColor": "#A2A2A2",
+          "labels": {
+            "format": "{value:,.0f} %",
+            "style": {
+              "fontSize": "12px",
+              "color": null,
+              "textOutline": null,
+              "fontWeight": null
+            }
+          },
+          "title": {
+            "text": null
+          },
+          "min": 0,
+          "max": 100,
+          "opposite": true
+        }
+      ],
+      "plotOptions": {
+        "spline": {
+          "enableMouseTracking": false,
+          "marker": {
+            "enabled": false
+          }
+        },
+        "dataLabels": {
+          "useHtml": null,
+          "shape": null,
+          "enabled": null,
+          "format": null,
+          "borderRadius": null,
+          "backgroundColor": null,
+          "borderWidth": null,
+          "borderColor": null,
+          "shadow": null,
+          "y": null,
+          "style": {
+            "fontSize": "12px",
+            "color": "#FFFFFF",
+            "textOutline": "none",
+            "fontWeight": null
+          }
+        }
+      },
+      "legend": {
+        "enabled": false
+      },
+      "series": [
+        {
+          "name": "",
+          "yAxis": 0,
+          "type": "spline",
+          "color": "#3C3C3C",
+          "lineWidth": 2,
+          "label": false,
+          "showInLegend": false,
+          "data": [
+            {
+              "x": 70,
+              "y": -354,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 80,
+              "y": -256,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 90,
+              "y": -144,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 100,
+              "y": -41,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 110,
+              "y": 44,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 120,
+              "y": 131,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 128,
+              "y": 173,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 130,
+              "y": 173,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 132,
+              "y": 186,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 136,
+              "y": 202,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 140,
+              "y": 207,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 144,
+              "y": 217,
+              "dataLabels": {
+                "useHtml": true,
+                "shape": "callout",
+                "enabled": true,
+                "format": "<span style='text-align: center;'>max revenue increase</span><br><span style='text-align: center;'><strong>+{y} EUR</strong> at <strong>{x:,.0f} EUR</strong></span>",
+                "borderRadius": 0,
+                "backgroundColor": "rgba(85, 102, 115, 0.5)",
+                "borderWidth": 0,
+                "borderColor": "rgba(85, 102, 115, 0.5)",
+                "shadow": false,
+                "y": 55,
+                "style": {
+                  "fontSize": "12px",
+                  "color": "#FFFFFF",
+                  "textOutline": "none",
+                  "fontWeight": "normal"
+                }
+              },
+              "marker": {
+                "enabled": true,
+                "fillColor": "#25CC70",
+                "lineColor": "#FFFFFF",
+                "lineWidth": 3,
+                "radius": 5
+              }
+            },
+            {
+              "x": 148,
+              "y": 227,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 150,
+              "y": 197,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 160,
+              "y": 186,
+              "dataLabels": null,
+              "marker": null
+            }
+          ]
+        },
+        {
+          "name": "",
+          "yAxis": 1,
+          "type": "spline",
+          "color": "#A2A2A2",
+          "lineWidth": 2,
+          "label": false,
+          "showInLegend": false,
+          "data": [
+            {
+              "x": 70,
+              "y": 93,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 80,
+              "y": 93,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 90,
+              "y": 93,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 100,
+              "y": 93,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 110,
+              "y": 93,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 120,
+              "y": 86,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 128,
+              "y": 86,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 130,
+              "y": 86,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 132,
+              "y": 86,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 136,
+              "y": 86,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 140,
+              "y": 79,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 144,
+              "y": 79,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 148,
+              "y": 79,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 150,
+              "y": 79,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 160,
+              "y": 71,
+              "dataLabels": null,
+              "marker": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Date": "02/12/2017",
+    "RoomType": "ES",
+    "RoomName": "Superior Deluxe",
+    "NumberOfRooms": 10,
+    "OriginalPrice": 2000,
+    "RecommendedPrice": 2400,
+    "PriceSaving": 400,
+    "PredictedOccupancyFrom": 40,
+    "PredictedOccupancyTo": 58,
+    "RevParFrom": 1234,
+    "RevParTo": 1456,
+    "RevUntilAdjustedDateFrom": 3456,
+    "RevUntilAdjustedDateTo": 3567,
+    "Competitors": [
+      {
+        "name": "Hotel One",
+        "price": 2000
+      },
+      {
+        "name": "Hotel Two",
+        "price": 2200
+      },
+      {
+        "name": "Hotel Three",
+        "price": 2040
+      },
+      {
+        "name": "Hotel Four",
+        "price": 2060
+      },
+      {
+        "name": "Hotel Five",
+        "price": 2080
+      },
+      {
+        "name": "Hotel Six",
+        "price": 3060
+      },
+      {
+        "name": "Hotel Seven",
+        "price": 3240
+      },
+      {
+        "name": "Hotel Eight",
+        "price": 3360
+      },
+      {
+        "name": "Hotel Nine",
+        "price": 3690
+      },
+      {
+        "name": "Your recommended price",
+        "price": 4390
+      }
+    ],
+    "Graphdata": {
+      "title": {
+        "text": null
+      },
+      "credits": {
+        "enabled": false
+      },
+      "exporting": {
+        "enabled": false
+      },
+      "subtitle": {
+        "text": null
+      },
+      "xAxis": {
+        "gridLineWidth": 0,
+        "lineWidth": 2,
+        "offset": 20,
+        "tickWidth": 2,
+        "tickAmount": 3,
+        "lineColor": "#556673",
+        "tickColor": "#556673",
+        "labels": {
+          "format": "{value:,.0f} EUR",
+          "style": {
+            "fontSize": "12px",
+            "color": null,
+            "textOutline": null,
+            "fontWeight": null
+          }
+        },
+        "title": {
+          "text": null
+        },
+        "min": 70,
+        "max": 160,
+        "opposite": null
+      },
+      "yAxis": [
+        {
+          "gridLineWidth": 0,
+          "lineWidth": 2,
+          "offset": 20,
+          "tickWidth": 2,
+          "tickAmount": 2,
+          "lineColor": "#3C3C3C",
+          "tickColor": "#3C3C3C",
+          "labels": {
+            "format": "{value:,.0f} EUR",
+            "style": {
+              "fontSize": "12px",
+              "color": null,
+              "textOutline": null,
+              "fontWeight": null
+            }
+          },
+          "title": {
+            "text": null
+          },
+          "min": -400,
+          "max": 500,
+          "opposite": null
+        },
+        {
+          "gridLineWidth": 0,
+          "lineWidth": 2,
+          "offset": 20,
+          "tickWidth": 2,
+          "tickAmount": 2,
+          "lineColor": "#A2A2A2",
+          "tickColor": "#A2A2A2",
+          "labels": {
+            "format": "{value:,.0f} %",
+            "style": {
+              "fontSize": "12px",
+              "color": null,
+              "textOutline": null,
+              "fontWeight": null
+            }
+          },
+          "title": {
+            "text": null
+          },
+          "min": 0,
+          "max": 100,
+          "opposite": true
+        }
+      ],
+      "plotOptions": {
+        "spline": {
+          "enableMouseTracking": false,
+          "marker": {
+            "enabled": false
+          }
+        },
+        "dataLabels": {
+          "useHtml": null,
+          "shape": null,
+          "enabled": null,
+          "format": null,
+          "borderRadius": null,
+          "backgroundColor": null,
+          "borderWidth": null,
+          "borderColor": null,
+          "shadow": null,
+          "y": null,
+          "style": {
+            "fontSize": "12px",
+            "color": "#FFFFFF",
+            "textOutline": "none",
+            "fontWeight": null
+          }
+        }
+      },
+      "legend": {
+        "enabled": false
+      },
+      "series": [
+        {
+          "name": "",
+          "yAxis": 0,
+          "type": "spline",
+          "color": "#3C3C3C",
+          "lineWidth": 2,
+          "label": false,
+          "showInLegend": false,
+          "data": [
+            {
+              "x": 70,
+              "y": -354,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 80,
+              "y": -256,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 90,
+              "y": -144,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 100,
+              "y": -41,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 110,
+              "y": 44,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 120,
+              "y": 131,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 128,
+              "y": 173,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 130,
+              "y": 173,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 132,
+              "y": 186,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 136,
+              "y": 202,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 140,
+              "y": 207,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 144,
+              "y": 217,
+              "dataLabels": {
+                "useHtml": true,
+                "shape": "callout",
+                "enabled": true,
+                "format": "<span style='text-align: center;'>max revenue increase</span><br><span style='text-align: center;'><strong>+{y} EUR</strong> at <strong>{x:,.0f} EUR</strong></span>",
+                "borderRadius": 0,
+                "backgroundColor": "rgba(85, 102, 115, 0.5)",
+                "borderWidth": 0,
+                "borderColor": "rgba(85, 102, 115, 0.5)",
+                "shadow": false,
+                "y": 55,
+                "style": {
+                  "fontSize": "12px",
+                  "color": "#FFFFFF",
+                  "textOutline": "none",
+                  "fontWeight": "normal"
+                }
+              },
+              "marker": {
+                "enabled": true,
+                "fillColor": "#25CC70",
+                "lineColor": "#FFFFFF",
+                "lineWidth": 3,
+                "radius": 5
+              }
+            },
+            {
+              "x": 148,
+              "y": 227,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 150,
+              "y": 197,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 160,
+              "y": 186,
+              "dataLabels": null,
+              "marker": null
+            }
+          ]
+        },
+        {
+          "name": "",
+          "yAxis": 1,
+          "type": "spline",
+          "color": "#A2A2A2",
+          "lineWidth": 2,
+          "label": false,
+          "showInLegend": false,
+          "data": [
+            {
+              "x": 70,
+              "y": 93,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 80,
+              "y": 93,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 90,
+              "y": 93,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 100,
+              "y": 93,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 110,
+              "y": 93,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 120,
+              "y": 86,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 128,
+              "y": 86,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 130,
+              "y": 86,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 132,
+              "y": 86,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 136,
+              "y": 86,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 140,
+              "y": 79,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 144,
+              "y": 79,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 148,
+              "y": 79,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 150,
+              "y": 79,
+              "dataLabels": null,
+              "marker": null
+            },
+            {
+              "x": 160,
+              "y": 71,
+              "dataLabels": null,
+              "marker": null
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
 
 
 

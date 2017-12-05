@@ -16,6 +16,7 @@ import {SpinnerDirective} from '../../directives/spinner.directive';
 export class RecommendationListComponent implements OnInit {
 
   @Input() Hotels: Array<Hotel> = new Array<Hotel>();
+  @Input() Currency: string;
   private selectedHotel: any;
 
   private texts: IMultiSelectTexts = {

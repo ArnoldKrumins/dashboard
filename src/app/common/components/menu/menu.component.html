@@ -1,0 +1,25 @@
+<div class="menu-header">
+
+  <img src="../../assets/images/atomizelogo.png" width="100" alt="Atomize logo">
+  <nav>
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a routerLink="/settings" routerLinkActive="active">Settings</a>
+  </nav>
+
+  <div class="user-info">
+    <ul>
+      <li>
+        <div class="details">
+          <p class="name">{{ user.username }}</p>
+          <p class="company">{{ user.company }}</p>
+        </div>
+      </li>
+      <li>
+        <div class="settings">
+          <i class="fa fa-cog" aria-hidden="true"></i>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</div>

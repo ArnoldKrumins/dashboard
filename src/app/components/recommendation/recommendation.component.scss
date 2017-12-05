@@ -114,7 +114,7 @@
   }
 
   .rec-detail-container {
-    height: 600px !important;
+    height: 900px !important;
     background-color: #FFFFFF;
     margin: 0 12px 0;
     border-top: 1px solid #CCCCCC;
@@ -144,13 +144,23 @@
       }
 
       .competitor-container{
+        border-left: 1px solid #CCCCCC;
+        .heading{
+          margin-bottom: 10px;
+        }
         table{
           width:100%;
+          margin-left: 10px;
+          tr{
+            td{
+              padding-bottom: 12px;
+              font-size: 16px;
+            }
+          }
+          &last-child { font-weight: bold; }
         }
       }
-
     }
-
     .graph-container{
       text-align: center;
     }
