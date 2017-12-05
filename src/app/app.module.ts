@@ -20,11 +20,12 @@ import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 import { SpinnerDirective } from './directives/spinner.directive';
 import { MenuComponent } from './common/components/menu/menu.component';
 import { RecommendationViewComponent } from './components/recommendation-view/recommendation-view.component';
+import {AuthGuard} from './common/guards/auth.guard';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'recommendation-view', component: RecommendationViewComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard]  },
+  { path: 'recommendation-view', component: RecommendationViewComponent, canActivate: [AuthGuard]   },
   { path: '',   redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
@@ -71,7 +72,9 @@ export function highchartsFactory() {
     {
       provide: HighchartsStatic,
       useFactory: highchartsFactory
-    }],
+    },
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
