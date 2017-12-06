@@ -13,9 +13,29 @@
     }
     form {
       @include border-radius-all(4px);
-      height: 280px;
+      height: 340px;
+      text-align: center;
       padding: 140px 50px 0px;
       background-color: white;
+      .support {
+        text-align: right;
+        margin: -8px 0 35px 0;
+        a {
+          color: #B1B1B1;
+          font-size: 12px;
+          text-decoration: none;
+        }
+      }
+      button {
+        @include border-radius-all(4px);
+        padding: 5px 10px;
+        background-color: #FFFFFF !important;
+        color: #3C3C3C;
+        span {
+          font-size: 12px;
+          color: #25CC70;
+        }
+      }
     }
   }
 }

@@ -8,7 +8,12 @@
       <div class="form-group">
         <input type="password" name="password" ngModel class="form-control" id="InputPassword" placeholder="Password">
       </div>
-      <button type="submit">Submit</button>
+          <div class="support">
+            <a href="mailto:support@atomize.com?Subject=Password%20Reset" target="_blank">Forgot password?</a>
+          </div>
+      <button class="btn btn-default"  type="submit">
+        <span class="glyphicon glyphicon-user"></span> Login
+      </button>
       <div *ngIf="error" class="alert alert-danger">{{error}}</div>
     </form>
   </div>
