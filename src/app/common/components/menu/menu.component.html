@@ -26,14 +26,14 @@
         </div>
       </li>
       <li>
-        <div class="settings">
+        <div class="settings" (click)="this.show = !this.show;">
           <i class="fa fa-cog" aria-hidden="true"></i>
         </div>
       </li>
     </ul>
   </div>
 
-  <div class="user-settings-dropdown" >
+  <div class="user-settings-dropdown"*ngIf="show">
     <p (click)="logout()">Logout</p>
   </div>
 

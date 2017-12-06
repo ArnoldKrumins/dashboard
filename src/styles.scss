@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  font-family: 'Roboto', sans-serif;
+  background-color: #2A3C4B;
+}
+
+.container{
+  margin-top: 50px !important;
+}
+
+.reco-bold{
+  font-weight: bold !important;
+}
+
+
+@mixin border-radius-all($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin border-radius-top($radius) {
+  -webkit-border-radius: $radius $radius 0 0;
+  -moz-border-radius: $radius $radius 0 0;
+  -ms-border-radius: $radius $radius 0 0;
+  border-radius: $radius $radius 0 0;
+}
+
+@mixin container-default(){
+  border: 1px solid #576773;
+  @include border-radius-top(8px);
+  background-color: #576773;
+  box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.2);
+}
