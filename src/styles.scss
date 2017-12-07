@@ -52,7 +52,7 @@ html {
 }
 
 // Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
   .login-container{
     margin-top: 140px;
   }
