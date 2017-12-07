@@ -11,7 +11,7 @@ import {Router} from '@angular/router';
 })
 export class MenuComponent implements OnInit {
   @Input() user: User;
-  private show = false;
+  show = false;
   constructor(private router: Router, private authService: AuthenticationService) { }
 
   @HostListener('document:click')

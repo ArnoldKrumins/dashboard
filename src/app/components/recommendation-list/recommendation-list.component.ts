@@ -19,17 +19,17 @@ export class RecommendationListComponent implements OnInit {
   @Input() Currency: string;
   private selectedHotel: any;
 
-  private texts: IMultiSelectTexts = {
+  texts: IMultiSelectTexts = {
      defaultTitle: 'Select room types'
   };
 
-  private settings: IMultiSelectSettings = {
+  settings: IMultiSelectSettings = {
     buttonClasses: 'btn btn-default btn-block btn-atomize',
     dynamicTitleMaxItems: 3,
     displayAllSelectedText: true
   };
-  private roomTypes: Array<number>;
-  private options: IMultiSelectOption[];
+  roomTypes: Array<number>;
+  options: IMultiSelectOption[];
   public recommendations: Observable<Recommendation[]>;
   constructor(private service: RecommendationsService) {
     this.recommendations = new Observable<Recommendation[]>();

@@ -1,7 +1,8 @@
+@import "../../../styles";
 
-h1 {
-  color: #FFFFFF;
-  font-size: 32px;
-  font-weight: bold;
+body{
+  @include background-image('/assets/images/home.png');
 }
+
+
 

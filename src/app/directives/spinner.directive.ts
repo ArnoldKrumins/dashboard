@@ -1,11 +1,12 @@
 import {Directive, ElementRef, Input, Renderer} from '@angular/core';
 
+
 @Directive({
   selector: '[appSpinner]'
 })
 export class SpinnerDirective {
 
-  private spinner: Spinner;
+  private spinner;
 
   private opts = {
     lines: 12, // The number of lines to draw

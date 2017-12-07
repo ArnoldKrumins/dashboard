@@ -10,7 +10,7 @@ export class RecommendationComponent implements OnInit {
 
   @Input() recommendation: Recommendation;
   @Input() currency: string;
-  private isCollapsed = true;
+  isCollapsed = true;
   constructor() { }
 
   ngOnInit() {

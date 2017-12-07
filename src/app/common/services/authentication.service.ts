@@ -3,11 +3,12 @@ import { Http, Headers, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Observable} from 'rxjs/Observable';
 import {HttpClient} from '@angular/common/http';
+import {environment} from "../../../environments/environment";
 
 @Injectable()
 export class AuthenticationService {
   public token: string;
-  private url = 'https://rkyh2h099h.execute-api.eu-west-1.amazonaws.com/prod/login';
+  private url = environment.apiUrl;
   constructor(private http: HttpClient) {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.token = currentUser && currentUser.token;
@@ -17,7 +18,7 @@ export class AuthenticationService {
 
 
     return this.http
-      .get(this.url + '?email=' + username + '&password=' + password, {observe: 'response'})
+      .get(this.url + 'login?email=' + username + '&password=' + password, {observe: 'response'})
       .map(resp => {
         const token = resp && resp.body['token'];
         if (token) {
