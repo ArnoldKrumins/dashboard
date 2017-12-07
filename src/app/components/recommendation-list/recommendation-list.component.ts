@@ -3,7 +3,7 @@ import {RecommendationsService} from './recommendations.service';
 import {Recommendation} from '../../models/recommendation';
 import {Observable} from 'rxjs/Observable';
 import {Hotel} from '../../models/hotel';
-import {IMultiSelectOption, IMultiSelectTexts} from 'angular-2-dropdown-multiselect';
+import {IMultiSelectOption, IMultiSelectSettings, IMultiSelectTexts} from 'angular-2-dropdown-multiselect';
 import {Roomtype} from '../../models/roomtype';
 import {SpinnerDirective} from '../../directives/spinner.directive';
 
@@ -22,8 +22,14 @@ export class RecommendationListComponent implements OnInit {
   private texts: IMultiSelectTexts = {
      defaultTitle: 'Select room types'
   };
+
+  private settings: IMultiSelectSettings = {
+    buttonClasses: 'btn btn-default btn-block btn-atomize',
+    dynamicTitleMaxItems: 3,
+    displayAllSelectedText: true
+  };
   private roomTypes: Array<number>;
-  private myOptions: IMultiSelectOption[];
+  private options: IMultiSelectOption[];
   public recommendations: Observable<Recommendation[]>;
   constructor(private service: RecommendationsService) {
     this.recommendations = new Observable<Recommendation[]>();
@@ -34,7 +40,7 @@ export class RecommendationListComponent implements OnInit {
   }
 
   onHotelChange(id) {
-    this.myOptions = this.Hotels.filter(x => x.id === id ).map(y => y.roomtypes)[0];
+    this.options = this.Hotels.filter(x => x.id === id ).map(y => y.roomtypes)[0];
   }
 
   onChange() {

@@ -1,10 +1,13 @@
+@import "../../../styles";
+
 .list-container {
   position: relative;
   padding: 10px;
   border: 1px solid #576773;
   border-radius: 8px 8px 0 0;
-  background-color: #576773;
-  box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.2);
+  @include container-default;
+  //background-color: #576773;
+  //box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.2);
 
   div.recommendation-grid {
     position: relative;
@@ -57,9 +60,8 @@
         position: absolute;
         top: 10px;
         right: 10px;
-        select {
-          background-color: #687681;
-          color: #FFFFFF;
+        ss-multiselect-dropdown{
+
         }
 
       }
@@ -67,3 +69,8 @@
 
   }
 }
+
+
+
+
+

@@ -1,15 +1,25 @@
 @import "../../../styles";
 
+body {
+  background: url(../../../assets/images/background.png) no-repeat center center fixed !important;
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+}
+
 .login-container {
   @include container-default;
-  margin-top: 80px;
-  padding: 54px 5px 5px;
+  background-color: rgba(87, 103, 115, 0.4) !important;
+  border: rgba(87, 103, 115, 0.4) !important;
+  margin-top: 140px;
+  padding: 54px 10px 10px;
   div {
     position: relative;
-    img {
-      position: absolute;
-      top: -40px;
-      left: 130px;
+    .image-container {
+      text-align: center;
+      margin-top: -36px;
+      margin-bottom: 12px;
     }
     form {
       @include border-radius-all(4px);
