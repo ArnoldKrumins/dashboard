@@ -1,11 +1,10 @@
 <div class="list-container" [appSpinner]="busy">
-    <ul class="hotel-roomtypes">
+    <ul class="hotel-roomtypes" *ngIf="Hotels?.length >0" > <!--  -->
       <li>
         <div>
           <select class="hotel" #selectHotel (change)="onHotelChange(selectHotel.value)">
             <option *ngFor="let hotel of Hotels" [value]="hotel.id">{{ hotel.name }}</option>
           </select>
-
         </div>
       </li>
       <li>

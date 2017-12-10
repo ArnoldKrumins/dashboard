@@ -32,7 +32,7 @@ export class RecommendationListComponent implements OnInit, AfterViewInit {
   }
   ngOnInit() {
   }
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     this.busy = true;
     this.recommendations = new Observable<Recommendation[]>();
     this.recommendations = this.service.getAll();

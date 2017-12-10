@@ -8,6 +8,6 @@ export class RecommendationsService {
   }
 
   getAll() {
-    return this.httpClient.get<Array<Recommendation>>('../../assets/data/recommendations.json').delay(5000);
+    return this.httpClient.get<Array<Recommendation>>('../../assets/data/recommendations.json').delay(1000);
   }
 }

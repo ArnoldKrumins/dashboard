@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import { CollapseModule } from 'ngx-bootstrap';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -69,6 +69,7 @@ export function highchartsFactory() {
     MultiselectDropdownModule
   ],
   providers: [
+    { provide: LOCALE_ID, useValue: 'en-GB' },
     {
       provide: HighchartsStatic,
       useFactory: highchartsFactory
