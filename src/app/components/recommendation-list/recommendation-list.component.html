@@ -20,7 +20,7 @@
         <!--<input type="checkbox" id="inlineCheckbox1" value="option1"> Select All-->
       <!--</label>-->
       <ul>
-        <li *ngFor="let rec of recommendations | async">
+        <li *ngFor="let rec of recommendations">
           <app-atomize-recommendation [currency]="Currency" [recommendation]="rec"></app-atomize-recommendation>
         </li>
       </ul>

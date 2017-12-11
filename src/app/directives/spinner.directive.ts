@@ -27,8 +27,8 @@ export class SpinnerDirective {
     left: '50%' // Left position relative to parent
   };
 
-  constructor(private el: ElementRef, private renderer: Renderer) {
-    this.spinner = new Spinner(this.opts);
+  constructor(private el: ElementRef) {
+     this.spinner = new Spinner(this.opts);
   }
 
   @Input('appSpinner') set busy(busy: boolean) {
