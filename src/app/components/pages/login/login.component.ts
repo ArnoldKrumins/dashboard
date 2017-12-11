@@ -12,7 +12,7 @@ import { ToastsManager } from 'ng2-toastr';
 })
 export class LoginComponent implements OnInit {
   error = '';
-  private busy = false;
+  busy = false;
 
   constructor(private router: Router, public toastr: ToastsManager,
               private authService: AuthenticationService, private vcr: ViewContainerRef) {

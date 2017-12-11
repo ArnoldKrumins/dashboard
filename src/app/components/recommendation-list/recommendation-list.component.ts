@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {AfterContentInit, Component, Input, OnInit} from '@angular/core';
 import {RecommendationsService} from './recommendations.service';
 import {Recommendation} from '../../models/recommendation';
 import {Hotel} from '../../models/hotel';
@@ -13,12 +13,13 @@ import 'rxjs/add/operator/distinctUntilChanged';
   templateUrl: './recommendation-list.component.html',
   styleUrls: ['./recommendation-list.component.scss']
 })
-export class RecommendationListComponent implements OnInit {
-  private busy = false;
+export class RecommendationListComponent implements OnInit, AfterContentInit {
+  busy = false;
   @Input() Hotels: Array<Hotel> = new Array<Hotel>();
   @Input() Currency: string;
   texts: IMultiSelectTexts = {
-    defaultTitle: 'Select room types'
+    defaultTitle: 'Select room types',
+    allSelected: 'All room types'
   };
 
   settings: IMultiSelectSettings = {
@@ -39,6 +40,9 @@ export class RecommendationListComponent implements OnInit {
       });
   }
   ngOnInit() {
+  }
+  ngAfterContentInit(): void {
+   // this.options = this.Hotels[0].roomtypes;
   }
   onHotelChange(id) {
     this.options = this.Hotels.filter(x => x.id === id).map(y => y.roomtypes)[0];
