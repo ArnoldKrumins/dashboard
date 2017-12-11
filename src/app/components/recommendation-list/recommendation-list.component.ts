@@ -1,10 +1,10 @@
-import {AfterViewInit, ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {RecommendationsService} from './recommendations.service';
 import {Recommendation} from '../../models/recommendation';
-import {Observable} from 'rxjs/Observable';
 import {Hotel} from '../../models/hotel';
 import {IMultiSelectOption, IMultiSelectSettings, IMultiSelectTexts} from 'angular-2-dropdown-multiselect';
 import {SpinnerDirective} from '../../directives/spinner.directive';
+import 'rxjs/add/operator/distinctUntilChanged';
 
 
 @Component({
@@ -43,7 +43,18 @@ export class RecommendationListComponent implements OnInit {
   onHotelChange(id) {
     this.options = this.Hotels.filter(x => x.id === id).map(y => y.roomtypes)[0];
   }
-  onChange() {
-    console.log(this.roomTypes);
+  onRoomTypeChange() {
+    if (this.roomTypes.length === 0 ) {
+      return;
+    }
+    this.busy = true;
+    this.service.getByRoomType(this.roomTypes)
+      .distinctUntilChanged()
+      .subscribe(data => {
+        this.recommendations = data;
+        this.busy = false;
+      });
   }
+
+
 }

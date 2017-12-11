@@ -20,6 +20,8 @@ import { SpinnerDirective } from './directives/spinner.directive';
 import { MenuComponent } from './common/components/menu/menu.component';
 import {AuthGuard} from './common/guards/auth.guard';
 import { RecommendationsComponent } from './components/pages/recommendations/recommendations.component';
+import {ToastModule, ToastOptions} from 'ng2-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -28,6 +30,7 @@ const appRoutes: Routes = [
   { path: '',   redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
+
 
 export declare let require: any;
 
@@ -38,6 +41,14 @@ export function highchartsFactory() {
 
   return hc;
 }
+
+export class CustomToastOptions extends ToastOptions {
+  animate = 'fade'; // you can override any options available
+  positionClass = 'toast-bottom-center';
+  newestOnTop = false;
+  showCloseButton = false;
+}
+
 
 @NgModule({
   declarations: [
@@ -55,10 +66,12 @@ export function highchartsFactory() {
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
+    ToastModule.forRoot(),
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: true } // <-- debugging purposes only TODO: Remove when dev complete.
     ),
     BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),
@@ -67,13 +80,16 @@ export function highchartsFactory() {
     MultiselectDropdownModule
   ],
   providers: [
-    { provide: LOCALE_ID, useValue: 'en-GB' },
+   // { provide: LOCALE_ID, useValue: 'en-GB' }, TODO: Look at passing in locale as a user setting.
     {
       provide: HighchartsStatic,
       useFactory: highchartsFactory
     },
+    {provide: ToastOptions, useClass: CustomToastOptions},
     AuthGuard
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

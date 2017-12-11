@@ -10,4 +10,9 @@ export class RecommendationsService {
   getAll() {
     return this.httpClient.get<Array<Recommendation>>('../../assets/data/recommendations.json').delay(1000);
   }
+  getByRoomType(roomtypes: Array<number>) {
+    const params = roomtypes.toString();
+    console.log(params);
+    return this.httpClient.get<Array<Recommendation>>('../../assets/data/recommendations.json').delay(1000);
+  }
 }

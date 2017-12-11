@@ -1,21 +1,22 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewContainerRef} from '@angular/core';
 import {Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
 import {AuthenticationService} from '../../../common/services/authentication.service';
-import {UserService} from '../../../common/services/user.service';
-
-
+import { ToastsManager } from 'ng2-toastr';
 
 @Component({
   selector: 'app-atomize-login',
-  providers: [AuthenticationService, UserService],
+  providers: [AuthenticationService],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  private busy = false;
   error = '';
-  constructor(private router: Router, private authService: AuthenticationService, private userService: UserService) {
+  private busy = false;
+
+  constructor(private router: Router, public toastr: ToastsManager,
+              private authService: AuthenticationService, private vcr: ViewContainerRef) {
+    this.toastr.setRootViewContainerRef(vcr);
   }
 
   ngOnInit() {
@@ -27,10 +28,12 @@ export class LoginComponent implements OnInit {
       .subscribe(result => {
         if (result === true) {
           this.router.navigate(['/home']);
-        } else {
-          this.error = 'Username or password is incorrect';
         }
       this.busy = false;
-      });
+      },
+        () => {
+        this.busy = false;
+        this.toastr.error('You have supplied incorrect login credentials', 'Login Error');
+    });
   }
 }
