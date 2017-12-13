@@ -39,6 +39,19 @@ html {
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
+
+  .rec-detail-body{
+    margin: 20px 0 0 0px!important;
+  }
+
+  .rec-container{
+    .room-name{
+      position: absolute !important;
+      top:5px !important;
+      font-size: 16px !important;
+    }
+  }
+
   .rec-headline {
     text-align: center;
     width: 80px !important;
@@ -48,26 +61,102 @@ html {
         div{
           width:100%;
         }
-
       }
+    }
+
+    .rec-headline-date{
+      width:100% !important;
+    }
+
+  }
+
+  .detail-container{
+    .info{
+      font-size: 18px!important;
+    }
+  }
+
+  .rec-detail{
+    position: inherit !important;
+    margin-left: -8px;
+    li{
+      display: inline !important;
     }
   }
 
   .rec-headline-room-number{
     position: inherit !important;
   }
+
+  .competitor-container{
+    border-top: 1px solid #CCCCCC !important;
+    border-left: none !important;
+    padding: 10px 0  20px 0!important;
+    table{
+      margin:0!important;
+      td{
+        font-size: 12px!important;
+      }
+    }
+  }
+
+  .rec-expander{
+    width: 70px !important;
+    height: 60px !important;
+
+    i{
+      top: 12px!important;
+      right: 23px!important;
+      font-size: 38px!important;
+    }
+  }
+
 }
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 320px) {
 
+  .rec-container{
+    .room-name{
+      position: absolute !important;
+      top:5px !important;
+      font-size: 14px !important;
+      margin: 0 !important;
+    }
+  }
+
+  .rec-detail{
+    margin-left: -18px !important;
+    span{
+      font-size: 10px !important;
+    }
+  }
+
   .rec-headline {
     width: 100px;
-    .rec-headline-date {
-      background-color: red;
-    }
-
   }
+
+  .detail-container{
+    .info{
+      font-size: 14px!important;
+    }
+    .heading{
+      font-size: 10px!important;
+    }
+  }
+
+  .rec-expander{
+    width: 50px !important;
+    height: 60px !important;
+
+    i{
+      top: 12px!important;
+      right: 14px!important;
+      font-size: 38px!important;
+    }
+  }
+
+
 
 }
 

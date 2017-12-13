@@ -15,6 +15,7 @@ import 'rxjs/add/operator/distinctUntilChanged';
 })
 export class RecommendationListComponent implements OnInit, AfterContentInit {
   busy = false;
+  selectedHotel: any = 1;
   @Input() Hotels: Array<Hotel> = new Array<Hotel>();
   @Input() Currency: string;
   texts: IMultiSelectTexts = {
@@ -40,6 +41,7 @@ export class RecommendationListComponent implements OnInit, AfterContentInit {
       });
   }
   ngOnInit() {
+    console.log(this.Hotels);
   }
   ngAfterContentInit(): void {
    // this.options = this.Hotels[0].roomtypes;
